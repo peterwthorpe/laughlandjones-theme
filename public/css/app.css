@@ -1917,7 +1917,7 @@ body {
 body #maincontent {
   height: 100%;
 }
-body #maincontent > *:first-child {
+body #maincontent > div:first-of-type {
   margin-top: 70px;
 }
 body.admin-bar .header {

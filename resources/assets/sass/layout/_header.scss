@@ -685,7 +685,7 @@ body{
   height:100%;
   #maincontent{
     height:100%;
-    >*:first-child{
+    >div:first-of-type{
       margin-top:70px;
     }
   }
