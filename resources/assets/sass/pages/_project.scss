@@ -1,4 +1,66 @@
 #project {
+
+  #read_more--container{
+    //max-height:6em;
+    max-height:100%;
+    padding-bottom:0;
+    transition:0.3s all;
+    overflow:hidden;
+    position:relative;
+
+    &::after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      height:4.5em;
+      background:linear-gradient(to bottom,transparent,#e2e2e3);
+    }
+
+    &.open{
+      max-height:9999px;
+      padding-bottom:40px;
+      &::after{
+        background:transparent;
+      }
+    }
+  }
+
+  #read_more--button{
+    display:none !important;
+    text-align:center;
+    button{
+      background-color:transparent;
+    }
+    &.hidden{
+      display:none;
+    }
+  }
+
+  .project-controls{
+      display:none;
+    position:relative;
+    max-width:160px;
+    margin:0 auto;
+	width:100%;
+    @media (min-width: 992px) {
+      position:absolute;
+      top:0;
+      right:0;
+    }
+
+    .button {
+      margin: 15px auto;
+      width: 100%;
+
+      button {
+        border: 0;
+      }
+
+    }
+  }
+
   .cgi-button {
     @include prdb;
 
@@ -18,65 +80,28 @@
     width: 50px;
   }
 
-  .back-button {
-    @include prdb;
-    @include box-sizing;
-
-    padding: .4rem 1rem;
-    margin: 30px auto 20px;
-    width: 90px;
-
-    img,
-    p {
-      @include prdib;
-
-      vertical-align: middle;
-    }
-
-    img {
-      height: .7rem;
-      width: auto;
-      transition: .3s ease transform;
-    }
-
-    p {
-      vertical-align: middle;
-      color: #838383;
-      font-size: .8rem;
-      margin: 0 0 0 10px;
-    }
-
-    &:hover {
-      text-decoration: none;
-
-      img {
-        transform: translateX(-5px);
-      }
-
-      p {
-        text-decoration: underline;
-      }
-    }
-  }
-
   .page-header {
     color: $orange;
     margin-bottom: 0;
   }
 
+  #read_more--button,
   .description,
   .testimonial {
     @include prdb;
     @include box-sizing;
 
     text-align: center;
-    padding: 20px;
     color: $grey;
     line-height: 1.5rem;
+    max-width:720px;
+    margin:0 auto;
   }
 
   .testimonial {
     margin: 1rem auto 0;
+    border: 1px solid rgba(255, 255, 255, .4);
+    padding: 20px;
 
     img {
       @include prdb;
@@ -88,66 +113,6 @@
 
     p {
       color: $grey;
-    }
-  }
-
-  #view-slideshow {
-    margin: 15px auto;
-    width: 70%;
-
-    button {
-      border: 0;
-    }
-
-    p {
-      color: $grey;
-    }
-  }
-
-  #back-link {
-    @include padb;
-
-    margin: 20px auto;
-    width: 100%;
-    height: 3rem;
-
-    p,
-    img {
-      @include prdib;
-
-      vertical-align: top;
-    }
-
-    p {
-      cursor: pointer;
-      font-size: .8rem;
-      line-height: 1.2rem;
-      color: white;
-      text-transform: uppercase;
-      vertical-align: middle;
-    }
-
-    img {
-      height: 12px;
-      margin: 16px 6px 0 0;
-      transition: .3s ease transform;
-    }
-
-    &:hover {
-      p {
-        text-decoration: underline;
-      }
-
-      img {
-        transform: translateX(-4px);
-      }
-    }
-
-    &:active {
-      img {
-        transition: .1s ease transform;
-        transform: translateX(-10px);
-      }
     }
   }
 
@@ -281,23 +246,9 @@
   }
 }
 
-// TABLET
-@media all and (min-width: 768px) {
-  #project {
-    #view-slideshow {
-      width: 50%;
-      margin: 25px auto;
-    }
-  }
-}
-
 // DESKTOP
 @media all and (min-width: 992px) {
   #project {
-    .description {
-      border: 1px solid rgba(255, 255, 255, .4);
-      margin: 2rem auto 0;
-    }
 
     #back-to-top {
       @include opacityz(.5);
@@ -310,11 +261,6 @@
 
         transform: translateY(-5px);
       }
-    }
-
-    #view-slideshow {
-      width: 160px;
-      cursor: pointer;
     }
 
     #project-image-grid {

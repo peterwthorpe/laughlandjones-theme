@@ -65,7 +65,6 @@
 
 				<a href="https://instagram.com/laughlandjones" class="instagram" target="_blank"></a>
 				<a href="https://www.pinterest.com/laughlandjones" class="pinterest" target="_blank"></a>
-				<a href="https://www.linkedin.com/company/laughlandjones" class="linkedin" target="_blank"></a>
 
 			</div>
 

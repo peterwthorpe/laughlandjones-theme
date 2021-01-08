@@ -11,37 +11,55 @@
     width: 100%;
     height: auto;
 
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+
     .project-table__label {
       color: $orange;
       padding-right: 30px;
       vertical-align: top;
+      width: 200px;
+      box-sizing: border-box;
     }
 
     .project-item {
-      @include prdb;
-
+      display: flex;
+      position: relative;
       width: 100%;
       margin-bottom: 2rem;
 
-      .keyline {
+      .project-item-container{
+        display: flex;
         width: 100%;
-        margin: 1rem 0 0;
       }
 
-      &:last-child {
-        margin-bottom: 100px;
+      .item-image,.item-content {
+        flex: 1 0 auto;
+        width: 50%;
+        box-sizing: border-box;
+      }
 
-        .keyline {
-          @include dn;
+      .item-image{
+        background-color:#66686a;
+      }
+
+      &:first-of-type{
+        .item-content {
+          border-top: 2px solid #9e9d9b;
         }
       }
 
       .item-content {
         @include prdb;
-
+        padding: 20px;
         height: 100%;
         text-decoration: none;
         color: $dark_grey;
+        border-bottom: 2px solid #9e9d9b;
 
         &:hover,
         &:active,
@@ -56,6 +74,7 @@
 
           padding: 15px;
           width: 100%;
+          max-width: 530px;
           height: auto;
 
           h3,
@@ -79,6 +98,8 @@
           .trunc-copy {
             margin-top: .5rem;
           }
+
+          table{width:100%;}
         }
       }
     }
@@ -100,9 +121,6 @@
   #in-progress {
     #in-progress-items {
       .project-item {
-        @include prdb;
-
-        width: 100%;
 
         .item-content {
           @include prdb;
@@ -152,21 +170,17 @@
     }
 
     .page-header:not(.page-header--empty) {
-      text-align: left !important;
-      margin-top: 70px;
-      margin-bottom: 70px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
 
     #in-progress-items {
-      @include prdb;
 
       width: 100%;
       margin-bottom: 100px;
 
       .project-item {
-        @include prdb;
 
-        width: 100%;
         margin: 0;
 
         .keyline {
@@ -185,8 +199,6 @@
             @include box-sizing;
 
             padding: 0;
-            width: 50%;
-            height: auto;
             background-color: transparent;
             margin: 0;
 

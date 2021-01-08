@@ -33,7 +33,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<a id="skiptocontent" href="#maincontent">Skip to main content</a>
 	<?php get_template_part( 'resources/templates/parts/parts', 'subscribe-modal' ); ?>
 	<?php get_template_part( 'resources/templates/parts/parts', 'notify-modal' ); ?>
 	<?php get_template_part( 'resources/templates/parts/parts', 'subscribe' ); ?>
 	<?php get_template_part( 'resources/templates/parts/parts', 'header' ); ?>
+	<main id="maincontent">

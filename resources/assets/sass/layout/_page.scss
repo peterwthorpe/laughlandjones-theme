@@ -1,3 +1,14 @@
+body.page,
+body.archive{
+  &.home,
+  &.page-template-template-our-approach,
+  &.post-type-archive-portfolio{
+    min-height: calc(100% - 70px);
+    height: calc(100% - 70px);
+    overflow: hidden;
+  }
+}
+
 .page {
   position: relative;
   display: block;
@@ -5,11 +16,14 @@
   min-height: 100%;
   overflow: hidden;
   margin: 0;
-  padding-bottom: 50px;
 
   &.padded-sides {
     padding-left: 5%;
     padding-right: 5%;
+  }
+
+  h1{
+    margin: 20px auto;
   }
 
   h1,
@@ -30,12 +44,6 @@
   }
 }
 
-@media all and (min-height: 420px) {
-  .page {
-    padding-bottom: 90px;
-  }
-}
-
 @media all and (min-width: 992px) {
   .page {
     box-sizing: border-box;
@@ -47,7 +55,7 @@
     }
 
     h1 {
-      margin: 70px auto;
+      margin: 40px auto;
     }
 
     p {

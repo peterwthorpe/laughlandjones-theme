@@ -30,7 +30,7 @@
     width: 100%;
     height: 50px;
     box-sizing: border-box;
-    background-color: #66686a;
+    background-color: #9e9d9b;
 
     img {
       position: absolute;
@@ -38,6 +38,661 @@
       right: 30px;
       top: 10px;
       width: 140px;
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  display: block;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  width: 100%;
+  z-index: 999 !important;
+
+  * {
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: #000;
+  }
+
+  #menu-container {
+    position: absolute;
+    display: block;
+    background-color: #9e9d9b;
+    height: 450px;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    @media (max-width: 991px) {
+      top: 70px;
+      transform: matrix(1, 0, 0, 1, 0, -450);
+    }
+
+    &.open .nav-item:not(.current-menu-item),
+    &.open .menu-item:not(.current-menu-item) {
+      box-shadow: 0 -1px 0 0 white inset !important;
+      color: white !important;
+    }
+
+    .nav-item,
+    .menu-item {
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+      height: 50px;
+      width: 100%;
+      background-color: #9e9d9b;
+      color: white;
+      top: 0;
+      box-shadow: none;
+      font-size: 1rem;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 50px;
+
+      &.menu-portfolio{
+        height: 150px;
+        a{
+          box-shadow: 0 -1px 0 0 white inset !important;
+          height: 50px;
+        }
+        .sub-menu .current-menu-item > a{
+          box-shadow: none !important;
+        }
+      }
+
+      &#nav-item {
+        box-shadow: none;
+      }
+
+      &:active:not(#footer-social) {
+        background-color: #9e9d9b;
+      }
+
+      &.current-menu-item {
+        background-color: #66686a !important;
+        box-shadow: 0 -3px 0 0 #dd7a39 inset;
+
+        > a {
+          color: #dd7a39 !important;
+        }
+      }
+
+      & > a {
+        display: block;
+        height: 100%;
+      }
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  #menu {
+    display: block;
+    background-color: #9e9d9b;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  #footer-social {
+    display: block;
+
+    #foot-logo-desktop {
+      display: none;
+    }
+
+    p {
+      text-align: right;
+      margin: 0;
+    }
+
+    .brochure {
+      display: none;
+    }
+
+    p,
+    .social-links a {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .social-links {
+      position: relative;
+      vertical-align: top;
+      height: 100%;
+      float: right;
+
+      a {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        width: 50px;
+        border-left: 1px solid white;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        transition: .7s ease background-color;
+
+        i {
+          position: absolute;
+          display: block;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          background-image: url("#{$imagePath}channel-logos-mob.png");
+          background-size: 250px 150px;
+          pointer-events: none;
+          transition: .7s ease transform;
+        }
+
+        .orange {
+          display: none;
+        }
+
+        &:active {
+          transition: .05s ease background-color;
+          background-color: #9e9d9b;
+
+          i {
+            transform: scale(.8);
+            transition: .05s ease transform;
+          }
+        }
+      }
+
+      .twitter .black {
+        background-position: 0 0;
+      }
+
+      .instagram .black {
+        background-position: -50px 0;
+      }
+
+      .pinterest .black {
+        background-position: -100px 0;
+      }
+
+      .linkedin .black {
+        background-position: -150px 0;
+      }
+    }
+  }
+
+  #mobile-foot-content {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #9e9d9b;
+    z-index: 2;
+    padding: 0 5%;
+    border-top: 1px solid #cecdcb;
+
+    #foot-logo,
+    button {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    #foot-logo {
+      position: relative;
+      display: inline-block;
+      width: 166.667px;
+      background-image: url("../../resources/assets/images/lj_logo_sm.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height:100%;
+      background-size:auto 45px;
+      margin:0;
+      padding:0 20px;
+      background-color:#66686a;
+
+      @media screen and (max-width: 329px) {
+        width: 120px;
+        background-size:auto 35px;
+      }
+    }
+
+    button {
+      float: right;
+      height: 30px;
+      padding: 0 10px;
+      border: 1px solid white;
+      border-radius: 5px;
+      text-transform: uppercase;
+      background-color: #9e9d9b;
+      font-size: 17px;
+      margin: 20px 0 0;
+      color: white;
+    }
+
+    .current-menu-item {
+      color: #dd7a39;
+    }
+  }
+
+  #portfolio-links,
+  .sub-menu {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1095px) {
+  .header #menu-container .nav-item#footer-social .social-links,
+  .header #menu-container .menu-item#footer-social .social-links {
+    display: none;
+  }
+}
+
+@media all and (max-height: 420px) and (max-width: 992px) {
+  .header {
+    height: 50px;
+
+    #menu-container {
+      height: 280px;
+
+      .nav-item,
+      .menu-item {
+        height: 40px;
+        line-height: 40px;
+
+        &#footer-social .social-links a {
+          width: 40px;
+
+          i {
+            height: 40px;
+            width: 40px;
+            background-size: 200px 120px;
+          }
+
+          .instagram .black {
+            background-position: -40px 0;
+          }
+
+          .pinterest .black {
+            background-position: -80px 0;
+          }
+
+          .linkedin .black {
+            background-position: -120px 0;
+          }
+        }
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    #mobile-foot-content {
+      #foot-logo {
+        position: relative;
+        display: inline-block;
+        height: 32px;
+        width: 133.333px;
+        margin: 11px 0 0;
+      }
+
+      button {
+        margin: 10px 0 0;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 992px) {
+  .header {
+    background-color: #9e9d9b;
+    transform: translateY(0);
+
+    .menu-portfolio{height: 50px;}
+
+    #portfolio-links,
+    .sub-menu {
+      position: absolute;
+      display: block;
+      width: 209px;
+      height: 122px;
+      bottom: -117px;
+      left: -44px;
+      z-index: 999 !important;
+      transform: translateY(10px);
+      -webkit-opacity: 0;
+      -moz-opacity: 0;
+      -ms-opacity: 0;
+      -o-opacity: 0;
+      opacity: 0;
+      transition: .3s ease all;
+    }
+    .sub-menu::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: -17px;
+      left: 0;
+      z-index: -1;
+      background-image: url("../../resources/assets/images/portfolio-links-surround.png");
+      background-size: contain;
+      background-position: center;
+      transform: rotate(180deg);
+    }
+
+    #menu-container .sub-menu .portfolio-links__item,
+    #menu-container .sub-menu .menu-item {
+      position: relative;
+      display: block;
+      height: 50px;
+      line-height: 58px;
+      padding: 0;
+      margin: auto;
+      width: 203px;
+      color: white;
+      cursor: pointer;
+      box-shadow: none;
+
+      &:hover {
+        color: #dd7a39;
+      }
+
+      &--completed {
+        box-shadow: 0 -1px 0 0 #8e9193 inset;
+      }
+    }
+
+    #menu-portfolio:hover #portfolio-links,
+    .menu-portfolio:hover .sub-menu {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    #mobile-foot-content {
+      display: none;
+    }
+
+    #nav-travel-line {
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background-color: #dd7a39;
+      width: 100px;
+      z-index: 995 !important;
+      transform: translateY(3px);
+    }
+
+    #menu-container {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      background: transparent;
+      margin-left: 15px;
+      width: 100%;
+
+      .nav-item,
+      .menu-item {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: top;
+        width: auto;
+        font-size: .9rem;
+        color: #fff;
+        border: 0;
+        height: 100%;
+        background-color: transparent;
+        padding: 0 15px;
+        line-height: 70px;
+        transition: .3s ease color, .3s ease background-color;
+
+        &.menu-portfolio{
+          height: 70px;
+          a{
+            box-shadow: none !important;
+            height: 70px;
+          }
+          .sub-menu .current-menu-item > a{
+            box-shadow: none !important;
+          }
+        }
+
+        &:not(.current-menu-item):not(#footer-social) {
+          cursor: pointer;
+        }
+
+        &.current-menu-item {
+          background-color: transparent;
+        }
+
+        &:hover:not(.current-menu-item):not(#footer-social) {
+          background-color: #707274;
+        }
+
+        .sub-menu .menu-item:hover {
+          background: none !important;
+        }
+
+        &#footer-social {
+          position: absolute;
+        }
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    #menu {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      background: transparent;
+      width: auto;
+    }
+
+    #footer-social {
+      position: absolute;
+      display: block;
+      right: 30px;
+      top: 0;
+
+      #foot-logo-desktop {
+        height:100%;
+        background-size:auto 45px;
+        margin:0;
+        padding:0 20px;
+        background-color:#66686a;
+        position: relative;
+        display: inline-block !important;
+        //height: 45px;
+        width: 191px;
+        background-image: url("../../resources/assets/images/lj-logo.jpg");
+        //background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        //margin: 15px 0 0;
+      }
+
+      p,
+      .social-links a {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      p {
+        text-align: right;
+        text-transform: none;
+      }
+
+      #follow {
+        display: none;
+      }
+
+      .brochure#brochure {
+        transition: .3s ease color;
+        cursor: pointer;
+        margin-right: 30px;
+
+        &:hover {
+          color: #dd7a39;
+        }
+      }
+
+      #dem-links {
+        vertical-align: top;
+        height: 30px;
+        margin: 20px 0 0 30px;
+
+        a,
+        a > i {
+          height: 30px;
+          width: 30px;
+        }
+
+        a {
+          border: 0;
+          background: transparent;
+          margin: 0;
+
+          &:active {
+            transform: none;
+          }
+
+          i {
+            background-size: 150px 90px;
+            transition: .3s ease opacity;
+          }
+
+          .black {
+            z-index: 10;
+          }
+
+          .orange {
+            position: absolute;
+            display: block;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            z-index: 1;
+          }
+
+          &:hover {
+            i {
+              transform: none;
+            }
+
+            .black {
+              opacity: 0;
+            }
+
+            .orange {
+              opacity: 1;
+            }
+          }
+        }
+
+        .twitter {
+          .black {
+            background-position: 0 0;
+          }
+
+          .orange {
+            background-position: 0 -30px;
+          }
+        }
+
+        .instagram {
+          .black {
+            background-position: -30px 0;
+          }
+
+          .orange {
+            background-position: -30px -30px;
+          }
+        }
+
+        .pinterest {
+          .black {
+            background-position: -60px 0;
+          }
+
+          .orange {
+            background-position: -60px -30px;
+          }
+        }
+
+        .linkedin {
+          .black {
+            background-position: -90px 0;
+          }
+
+          .orange {
+            background-position: -90px -30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 1070px) {
+  .header #menu-container #footer-social .brochure#brochure {
+    display: inline-block;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 1200px) {
+  .header #menu-container #footer-social #dem-links {
+    display: inline-block;
+  }
+}
+
+#skiptocontent{height:1px;overflow:hidden;position:absolute;top:-1000em;width:1px}
+
+html{
+  #wpadminbar{
+    @media screen and (max-width: 600px) {
+      position:fixed !important;
+      #wp-admin-bar-root-default > *:not(#wp-admin-bar-site-name) {
+        display:none;
+      }
+    }
+  }
+}
+body{
+  height:100%;
+  #maincontent{
+    height:100%;
+    >*:first-child{
+      margin-top:70px;
+    }
+  }
+  &.admin-bar {
+    .header{margin-top:32px}
+    @media screen and (max-width: 782px) {
+      .header{margin-top:46px}
     }
   }
 }

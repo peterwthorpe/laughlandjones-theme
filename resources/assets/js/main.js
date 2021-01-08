@@ -50,12 +50,11 @@ class App {
     if ($menu.hasClass('open')) {
       $menu.removeClass('open')
       $menuButton.removeClass('active')
-      TweenLite.to($menu, menuSpeed, {y: 0})
-    } else {
       var dist = $menu.height()
-
-      $menu.addClass('open')
       TweenLite.to($menu, menuSpeed, {y: -dist})
+    } else {
+      $menu.addClass('open')
+      TweenLite.to($menu, menuSpeed, {y: 0})
       $menuButton.addClass('active')
     }
   }

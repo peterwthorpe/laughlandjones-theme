@@ -174,7 +174,9 @@
   .items-list {
     .designs {
       list-style: none;
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: content;
       margin: 20px -8px;
       padding: 0;
       text-align: center;
@@ -193,6 +195,12 @@
           background-repeat: no-repeat;
           background-position: center center;
           background-size: cover;
+          min-height: 200px;
+          @media (min-width: 400px) and (max-width: 575px) {
+            float: left;
+            margin-right: 10px;
+            width: 50%;
+          }
         }
 
         h4 {
@@ -327,6 +335,7 @@
       display: block;
       cursor: pointer;
       width: 100%;
+      height: 370px;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -847,6 +856,20 @@
     }
   }
 
+  .fabrics-collection {
+    .items-list {
+      .designs {
+        li {
+          width:100%;
+          @media (min-width: 576px) {
+            width:50%
+          }
+        }
+      }
+    }
+  }
+
+
   .fabrics-archive {
     .highlights-container {
       flex-direction: column;
@@ -907,11 +930,16 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 576px) {
   .design-meta {
     .entry-thumbnail {
-      height: 370px;
+      height: 100%;
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .design-meta {
 
     .row {
       display: flex;

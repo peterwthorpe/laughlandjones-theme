@@ -58,30 +58,49 @@ if ( $photo_array ) {
 		<em><?php echo esc_html($project['location']); ?></em>
 	</h1>
 
-	<p class="description"><?php echo esc_html($project['description']); ?></p>
+	<div class="read_more">
+		<div id="read_more--container">
+			<p class="description"><?php echo esc_html($project['description']); ?></p>
 
-  	<?php if( $project['testimonial'] ) { ?>
-		<div class="testimonial">
-			<p><?php echo esc_html($project['testimonial']); ?></p>
+  			<?php if( $project['testimonial'] ) { ?>
+				<div class="testimonial">
+					<p><?php echo esc_html($project['testimonial']); ?></p>
+				</div>
+			<?php } ?>
+
+			<?php if( $project['cgi_link'] ) { ?>
+				<a href="<?php echo esc_url($project['cgi_link']) ?>" class="button orange cgi-button" target="_blank">
+					<button></button>
+					<p class="btn-text">View 3D Interactive Experience</p>
+				</a>
+			<?php } ?>
 		</div>
-	<?php } ?>
-
-	<?php if( $project['cgi_link'] ) { ?>
-		<a href="<?php echo esc_url($project['cgi_link']) ?>" class="button orange cgi-button" target="_blank">
-			<button></button>
-			<p class="btn-text">View 3D Interactive Experience</p>
-		</a>
-	<?php } ?>
-
-	<div id="view-slideshow" class="button outline">
-		<button></button>
-		<p class="btn-text">« Slideshow »</p>
+		<div id="read_more--button">
+			<button type="button"><p class="orange">&#8650; Click to expand and read more &#8650;</p></button>
+		</div>
+		<script>
+var button = document.getElementById('read_more--button');
+button.addEventListener('click', function(ev) {
+  var container = document.getElementById('read_more--container');
+  container.classList.add('open');
+  button.classList.add('hidden');
+}, false);
+		</script>
 	</div>
 
-	<a href="/portfolio/" class="back-button">
-		<img src="<?php esc_attr_e( get_template_directory_uri() ) ?>/resources/assets/images/arrow-back-dark.png">
-    	<p>Back</p>
-	</a>
+	<div class="project-controls">
+
+		<div id="view-slideshow" class="button orange">
+			<button></button>
+			<p class="btn-text">« Slideshow »</p>
+		</div>
+
+		<div class="button grey">
+			<button onclick="history.back(-1)"></button>
+			<p class="btn-text">&#8592; Back</p>
+		</div>
+
+	</div>
 
 	<!-- THE IMAGE GRID -->
   	<div id="project-image-grid"></div>

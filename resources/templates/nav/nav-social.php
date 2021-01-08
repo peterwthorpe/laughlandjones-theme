@@ -15,9 +15,11 @@
 			<i class='orange'></i>
 			<i class='black'></i>
 		</a>
+<?php /*
 		<a class='linkedin' href='https://linkedin.com/company/laughlandjones' target='_blank'>
 			<i class='orange'></i>
 			<i class='black'></i>
 		</a>
+*/ ?>
 	</div>
 </li>

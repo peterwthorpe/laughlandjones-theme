@@ -56,20 +56,6 @@ var _Employees = <?php echo json_encode( $employees ) ?>;
 </script>
 
 <div id="who" class="page padded-sides padded-bottom">
-	<h1 class="page-header">Team</h1>
-	<?php echo wpautop( $team_options['intro'] ); ?>
-	<div class="keyline"></div>
-	<h1 class="page-header">Some Numbers</h1>
-	<ul id="company-numbers" class="company-numbers">
-		<?php foreach ( $company_numbers as $number ) { ?>
-			<li class="company-numbers__item">
-				<span class="company-numbers__number" data-total=<?php esc_attr_e( $number['total' ]);?> data-suffix="<?php esc_attr_e( $number['suffix'] ?: false );?>">
-					0 <?php esc_html_e( $number['suffix'] );?>
-				</span>
-				<div class="company-numbers__metric"><?php esc_html_e( $number['text'] ); ?></div>
-			</li>
-		<?php } ?>
-	</ul>
 	<div id="employees">
 		<h1 class="page-header orange">Meet the Team</h1>
 		<div class="andrew-and-russell">
@@ -95,6 +81,21 @@ var _Employees = <?php echo json_encode( $employees ) ?>;
 				</li><?php } ?>
 		</ul>
 	</div>
+	<div class="keyline"></div>
+	<h1 class="page-header">Team</h1>
+	<?php echo wpautop( $team_options['intro'] ); ?>
+	<div class="keyline"></div>
+	<h1 class="page-header">Some Numbers</h1>
+	<ul id="company-numbers" class="company-numbers">
+		<?php foreach ( $company_numbers as $number ) { ?>
+			<li class="company-numbers__item">
+				<span class="company-numbers__number" data-total=<?php esc_attr_e( $number['total' ]);?> data-suffix="<?php esc_attr_e( $number['suffix'] ?: false );?>">
+					0 <?php esc_html_e( $number['suffix'] );?>
+				</span>
+				<div class="company-numbers__metric"><?php esc_html_e( $number['text'] ); ?></div>
+			</li>
+		<?php } ?>
+	</ul>
 	<div class="keyline"></div>
 	<h1 class="page-header">Find Us Online</h1>
 	<div class="social-links">

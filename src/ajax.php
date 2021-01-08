@@ -1,7 +1,8 @@
 <?php
 
 function lj_send_email() {
-	$to_address = 'cloth@laughlandjones.co.uk';
+	$to_address = 'enquiries@'.str_ireplace('www.', '', $_SERVER['HTTP_HOST']);
+	if(!filter_var($to_address, FILTER_VALIDATE_EMAIL)) $to_address = 'enquiries@laughlandjones.co.uk';
 	$subject = 'Website Contact';
 
 	$message = 'Name: ' . $_REQUEST['contact']['name'] . '<br>'

@@ -11,6 +11,12 @@ function lj_add_home_metaboxes() {
 	));
 
 	$metabox->add_field( array(
+		'name'       => __( 'Homepage Overlay', 'lj' ),
+		'id'         => 'homepage_overlay',
+		'type'       => 'wysiwyg',
+	) );
+
+	$metabox->add_field( array(
 		'name'       => __( 'Homepage Gallery', 'lj' ),
 		'id'         => 'lj_home_gallery',
 		'type'       => 'file_list',

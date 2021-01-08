@@ -1,6 +1,6 @@
 {
-  "name": "sparkdevelopment/laughlandjones-theme",
-  "description": "https://github.com/sparkdevelopment/laughlandjones-theme.git",
+  "name": "peterwthorpe/laughlandjones-theme",
+  "description": "https://github.com/peterwthorpe/laughlandjones-theme.git",
   "type": "wordpress-theme",
   "require": {
     "php": ">=5.2.4"

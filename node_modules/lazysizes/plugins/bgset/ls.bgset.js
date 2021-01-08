@@ -8,6 +8,8 @@
 
 	if(typeof module == 'object' && module.exports){
 		factory(require('lazysizes'));
+	} else if (typeof define == 'function' && define.amd) {
+		define(['lazysizes'], factory);
 	} else if(window.lazySizes) {
 		globalInstall();
 	} else {
@@ -127,13 +129,15 @@
 
 
 		if(bg){
+			var useSrc = regBgUrlEscape.test(bg) ? JSON.stringify(bg) : bg;
 			var event = lazySizes.fire(elem, 'bgsetproxy', {
 				src: bg,
-				useSrc: regBgUrlEscape.test(bg) ? JSON.stringify(bg) : bg,
+				useSrc: useSrc,
+				fullSrc: null,
 			});
 
 			if(!event.defaultPrevented){
-				elem.style.backgroundImage = 'url(' + event.detail.useSrc + ')';
+				elem.style.backgroundImage = event.detail.fullSrc || 'url(' + event.detail.useSrc + ')';
 			}
 		}
 

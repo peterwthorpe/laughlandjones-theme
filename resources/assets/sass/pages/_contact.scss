@@ -223,7 +223,6 @@
 // DESKTOP
 @media all and (min-width: 992px) {
   #contact {
-    margin-bottom: 80px;
 
     #contact-data-wrap {
       width: 900px;
@@ -317,7 +316,6 @@
         .address {
           @include prdb;
 
-          width: 300px;
           height: auto;
           margin: 30px auto;
 

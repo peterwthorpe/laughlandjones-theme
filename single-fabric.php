@@ -151,6 +151,7 @@ get_header();
 									<td id="fabric-<?php esc_attr_e( str_replace( ' ', '-', strtolower( $label ) ) ); ?>" class="fabric-<?php esc_attr_e( str_replace( ' ', '-', strtolower( $label ) ) ); ?>"><?php echo esc_html( $meta ); ?></td>
 								</tr>
 							<?php } ?>
+<?php /*
 							<tr>
 								<th>Colours included</th>
 								<td id="fabric-selected-colors">
@@ -163,7 +164,7 @@ get_header();
 									</div>
 								</td>
 							</tr>
-
+*/ ?>
 						</tbody>
 					</table>
 

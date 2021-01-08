@@ -41,6 +41,7 @@ $template_data = [
 
 ?>
 
+<?php /* temporary kill the header as requested
 <div class="fabrics-header">
 	<?php get_template_part( 'resources/templates/nav/nav', 'fabrics' ); ?>
 
@@ -63,7 +64,7 @@ $template_data = [
 		</div>
 	</div>
 </div>
-
+*/ ?>
 <div class="fabrics fabrics-collection page">
 	<div class="container">
 		<div class="row row-title">

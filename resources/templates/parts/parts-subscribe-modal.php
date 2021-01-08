@@ -34,8 +34,8 @@
 						<p class="checktext">Download our portfolio</p>
 					</label>
 				</div>
-				<input type="text" id="name-field" placeholder="enter your full name">
-				<input type="email" id="email-field" placeholder="enter your email address">
+				<input type="text" id="name-field" placeholder="enter your full name" name="name" autocomplete="name">
+				<input type="email" id="email-field" placeholder="enter your email address" name="email" autocomplete="email">
 				<div class="button orange" id="subscribe-button">
 					<button class="button--subscribe"></button>
 					<p class="btn-text">Go »</p>

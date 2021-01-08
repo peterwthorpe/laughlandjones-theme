@@ -39,7 +39,8 @@ if ( ! function_exists( 'lj_register_portfolio_entry_status_taxonomy' ) ) {
 				'choose_from_most_used'      => __( 'Choose from the most used items', 'lj' ),
 				'not_found'                  => __( 'No item statuses found.', 'lj' ),
 				'back_to_items'              => __( 'Back to statuses', 'lj' ),
-			)
+			),
+			'show_admin_column' => true
 		));
 	}
 	add_action( 'init', 'lj_register_portfolio_entry_status_taxonomy', 0 );

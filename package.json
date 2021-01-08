@@ -13,18 +13,24 @@
     "javascript:lint": "cross-env NODE_ENV=production gulp javascript:lint --gulpfile=build/build.js",
     "php:lint": "composer lint",
     "lint": "npm run php:lint && npm run sass:lint && npm run javascript:lint",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-multiselect": "^0.9.13-1",
     "gsap": "^2.1.3",
+    "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
     "lazysizes": "^5.1.0",
     "magnific-popup": "^1.1.0",
-    "swiper": "^4.5.0"
+    "popper": "^1.0.1",
+    "swiper": "^4.5.0",
+    "webpack": "^5.11.1"
   },
   "devDependencies": {
+    "@tonik/eslint-config": "^1.1.1",
+    "@tonik/stylelint-config-scss": "^2.0.0",
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.0",
@@ -52,12 +58,14 @@
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-stream": "^1.24.1",
-    "@tonik/eslint-config": "^1.1.1",
-    "@tonik/stylelint-config-scss": "^2.0.0",
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^17.0.0",
     "stylelint-scss": "^2.1.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "webpack-cli": "^4.3.1"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }
